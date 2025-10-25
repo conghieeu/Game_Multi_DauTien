@@ -52,8 +52,23 @@
         "Obj/": true,
         "ProjectSettings/": true,
         "temp/": true,
-        "Temp/": true
+        "Temp/": true,
+        "UserSettings": true,
+        "Game_Multi_DauTien.sln": true,
+        "Unity.Fusion.CodeGen.csproj": true,
+        "Fusion.Unity.Editor.csproj": true,
+        "Fusion.Unity.csproj": true,
+        "Assembly-CSharp.csproj": true,
+        "Packages": true
     },
     "dotnet.defaultSolution": "Game_Multi_DauTien.sln",
-    "hide-files.files": []
+    "hide-files.files": [
+        "UserSettings",
+        "Game_Multi_DauTien.sln",
+        "Unity.Fusion.CodeGen.csproj",
+        "Fusion.Unity.Editor.csproj",
+        "Fusion.Unity.csproj",
+        "Assembly-CSharp.csproj",
+        "Packages"
+    ]
 }
