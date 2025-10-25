@@ -1,55 +1,47 @@
 # 🎮 Game_Multi_DauTien
 
-Unity multiplayer game project sử dụng Photon Fusion networking framework.
+Dự án game nhiều người chơi Unity sử dụng Photon Fusion.
 
 ## 📋 Mô Tả Dự Án
 
-**Game_Multi_DauTien** là một game multiplayer được phát triển trên nền tảng Unity 3D, sử dụng Photon Fusion để xử lý networking. Dự án này bao gồm các tính năng multiplayer cơ bản như player management, spawn system, và real-time synchronization.
+**Game_Multi_DauTien** là một game nhiều người chơi được phát triển trên Unity 3D, sử dụng Photon Fusion để xử lý mạng. Dự án này bao gồm các tính năng nhiều người chơi cơ bản như quản lý người chơi, hệ thống spawn, và đồng bộ hóa thời gian thực.
 
 ## ⚡ Tính Năng Chính
 
-- ✅ **Multiplayer Networking**: Photon Fusion integration
-- ✅ **Player Management**: Join/Leave system với NetworkDictionary
-- ✅ **Spawn System**: Automatic player spawning với spawn points
-- ✅ **Health System**: Network-synchronized health và respawn
-- ✅ **Input Prediction**: Lag compensation và smooth gameplay
-- ✅ **Cross Platform**: PC support với potential mobile expansion
+- ✅ **Mạng Nhiều Người Chơi**: Tích hợp Photon Fusion
+- ✅ **Quản Lý Người Chơi**: Hệ thống vào/ra với NetworkDictionary
+- ✅ **Hệ Thống Spawn**: Tự động spawn người chơi với các điểm spawn
+- ✅ **Hệ Thống Máu**: Đồng bộ máu qua mạng và hồi sinh
+- ✅ **Dự Đoán Input**: Bù trễ và gameplay mượt mà
+- ✅ **Đa Nền Tảng**: Hỗ trợ PC với khả năng mở rộng mobile
 
 ## 🛠️ Công Nghệ Sử Dụng
 
 - **Engine**: Unity 2022.3 LTS
-- **Networking**: Photon Fusion
-- **Rendering**: Universal Render Pipeline (URP)
+- **Mạng**: Photon Fusion
+- **Render**: Universal Render Pipeline (URP)
 - **Input**: Unity Input System
-- **Platform**: Windows PC (Primary)
+- **Nền tảng**: Windows PC (Chính)
 
-## 📁 Cấu Trúc Dự Án
+## 📁 Cấu Trúc Code Chính
 
 ```
-Assets/
-├── Scripts/              # Core game logic
-│   └── Game/
-│       └── Gameplay.cs   # Main gameplay controller
-├── Prefabs/             # GameObject prefabs
-├── Scenes/              # Game scenes
-├── Materials/           # Materials và shaders
-├── Animations/          # Animation assets
-├── Audio/              # Sound effects và music
-├── Photon/             # Photon Fusion assets
-└── Settings/           # Project configurations
+Assets/Scripts/
+└── Game/
+    └── Gameplay.cs       # Controller gameplay chính
 ```
 
-## 🚀 Cài Đặt & Setup
+## 🚀 Cài Đặt & Thiết Lập
 
 ### Yêu Cầu Hệ Thống
 - **Unity**: 2022.3 LTS hoặc mới hơn
-- **OS**: Windows 10/11
-- **RAM**: 8GB minimum, 16GB recommended
-- **Storage**: 2GB free space
+- **Hệ điều hành**: Windows 10/11
+- **RAM**: 8GB tối thiểu, 16GB khuyến nghị
+- **Ổ cứng**: 2GB dung lượng trống
 
-### Bước Cài Đặt
+### Các Bước Cài Đặt
 
-1. **Clone Repository**
+1. **Sao chép Repository**
    ```bash
    git clone https://github.com/conghieeu/Game_Multi_DauTien.git
    cd Game_Multi_DauTien
@@ -57,148 +49,148 @@ Assets/
 
 2. **Mở Dự Án trong Unity**
    - Mở Unity Hub
-   - Click "Open" và chọn thư mục dự án
-   - Đợi Unity import assets
+   - Nhấn "Open" và chọn thư mục dự án
+   - Đợi Unity nhập assets
 
-3. **Setup Photon Fusion**
-   - Tạo Photon account tại [Photon Engine](https://www.photonengine.com/)
+3. **Thiết lập Photon Fusion**
+   - Tạo tài khoản Photon tại [Photon Engine](https://www.photonengine.com/)
    - Lấy App ID từ Photon Dashboard
-   - Paste App ID vào Photon settings trong Unity
+   - Dán App ID vào cài đặt Photon trong Unity
 
-4. **Build Settings**
+4. **Cài Đặt Build**
    - File → Build Settings
-   - Chọn platform (PC, Mac & Linux Standalone)
-   - Click "Build and Run"
+   - Chọn nền tảng (PC, Mac & Linux Standalone)
+   - Nhấn "Build and Run"
 
 ## 🎮 Cách Chơi
 
-### Single Player Testing
+### Kiểm Thử Một Người
 1. Build game từ Unity
-2. Chạy executable
-3. Chọn "Host" để tạo room
-4. Test gameplay mechanics
+2. Chạy file thực thi
+3. Chọn "Host" để tạo phòng
+4. Kiểm tra cơ chế gameplay
 
-### Multiplayer Testing  
-1. Build game với Development Build enabled
-2. Chạy nhiều instances:
-   - Instance 1: Chọn "Host" 
-   - Instance 2+: Chọn "Join" và nhập room name
-3. Test networking features
+### Kiểm Thử Nhiều Người  
+1. Build game với Development Build được bật
+2. Chạy nhiều phiên bản:
+   - Phiên bản 1: Chọn "Host" 
+   - Phiên bản 2+: Chọn "Join" và nhập tên phòng
+3. Kiểm tra tính năng mạng
 
 ## 🏗️ Kiến Trúc Code
 
-### Core Classes
+### Lớp Chính
 
 #### `Gameplay.cs`
-- **Purpose**: Main gameplay controller
-- **Responsibilities**:
-  - Player join/leave management
-  - Agent spawning/despawning
-  - Respawn system
-  - Network state synchronization
+- **Mục đích**: Controller gameplay chính
+- **Trách nhiệm**:
+  - Quản lý người chơi vào/ra
+  - Sinh/hủy Agent
+  - Hệ thống hồi sinh
+  - Đồng bộ trạng thái mạng
 
-#### Network Architecture
+#### Kiến Trúc Mạng
 ```
 NetworkRunner
 └── Gameplay (NetworkBehaviour)
     ├── Players (NetworkDictionary<PlayerRef, Player>)
-    ├── SpawnPoints Management
-    └── Agent Lifecycle Management
+    ├── Quản lý SpawnPoints
+    └── Quản lý Vòng đời Agent
 ```
 
-### Key Systems
+### Hệ Thống Chính
 
-1. **Player Management**
-   - NetworkDictionary lưu trữ players by PlayerRef
-   - Automatic cleanup khi player disconnect
+1. **Quản Lý Người Chơi**
+   - NetworkDictionary lưu trữ người chơi theo PlayerRef
+   - Tự động dọn dẹp khi người chơi ngắt kết nối
 
-2. **Spawn System**
-   - Round-robin spawn point selection
-   - Respawn delay: 3 seconds
-   - Spawn protection: 3 seconds immortality
+2. **Hệ Thống Spawn**
+   - Chọn điểm spawn theo vòng tròn
+   - Độ trễ hồi sinh: 3 giây
+   - Bảo vệ spawn: 3 giây bất tử
 
-3. **Health System**
-   - Network-synchronized health values
-   - FatalHitTaken event handling
-   - Automatic respawn trigger
+3. **Hệ Thống Máu**
+   - Giá trị máu đồng bộ qua mạng
+   - Xử lý sự kiện FatalHitTaken
+   - Tự động kích hoạt hồi sinh
 
-## 🔧 Development Workflow
+## 🔧 Quy Trình Phát Triển
 
-### Git Branching Strategy
-- `main`: Production code
-- `develop`: Integration branch  
-- `feature/*`: New features
-- `bugfix/*`: Bug fixes
+### Chiến Lược Nhánh Git
+- `main`: Code sản xuất
+- `develop`: Nhánh tích hợp
+- `feature/*`: Tính năng mới
+- `bugfix/*`: Sửa lỗi
 
-### Testing Process
-1. **Local Testing**: Single player functionality
-2. **Network Testing**: Multiple clients trên cùng máy
-3. **LAN Testing**: Multiple devices
-4. **Performance Testing**: Profiling với Unity Profiler
+### Quy Trình Kiểm Thử
+1. **Kiểm Thử Cục Bộ**: Chức năng một người chơi
+2. **Kiểm Thử Mạng**: Nhiều client trên cùng máy
+3. **Kiểm Thử LAN**: Nhiều thiết bị
+4. **Kiểm Thử Hiệu Năng**: Profiling với Unity Profiler
 
-## 📈 Performance Metrics
+## 📈 Chỉ Số Hiệu Năng
 
-- **Tick Rate**: 60 Hz
-- **Max Players**: 200 concurrent
-- **Network RTT**: < 50ms optimal
-- **Frame Rate**: 60 FPS target
+- **Tốc Độ Tick**: 60 Hz
+- **Người Chơi Tối Đa**: 200 đồng thời
+- **Network RTT**: < 50ms tối ưu
+- **Tốc Độ Khung Hình**: 60 FPS mục tiêu
 
-## 🐛 Troubleshooting
+## 🐛 Xử Lý Sự Cố
 
-### Common Issues
+### Lỗi Thường Gặp
 
-1. **Connection Failed**
+1. **Kết Nối Thất Bại**
    - Kiểm tra Photon App ID
-   - Verify internet connection
-   - Check firewall settings
+   - Xác minh kết nối internet
+   - Kiểm tra cài đặt firewall
 
-2. **Sync Issues**
-   - Restart Unity
-   - Clear Library folder
-   - Reimport Photon assets
+2. **Lỗi Đồng Bộ**
+   - Khởi động lại Unity
+   - Xóa thư mục Library
+   - Nhập lại Photon assets
 
-3. **Build Errors**
-   - Update Unity to latest LTS
-   - Clear Temp folder
-   - Check platform settings
+3. **Lỗi Build**
+   - Cập nhật Unity lên LTS mới nhất
+   - Xóa thư mục Temp
+   - Kiểm tra cài đặt nền tảng
 
-### Debug Tools
-- **Fusion Statistics**: Real-time network stats
-- **Unity Console**: Error logging
-- **Photon Dashboard**: Connection monitoring
+### Công Cụ Debug
+- **Fusion Statistics**: Thống kê mạng thời gian thực
+- **Unity Console**: Ghi log lỗi
+- **Photon Dashboard**: Giám sát kết nối
 
-## 🤝 Contributing
+## 🤝 Đóng Góp
 
-### Development Guidelines
-1. Follow C# coding standards
-2. Write clear commit messages
-3. Test trước khi push
-4. Update documentation
+### Hướng Dẫn Phát Triển
+1. Tuân thủ chuẩn coding C#
+2. Viết commit message rõ ràng
+3. Kiểm thử trước khi push
+4. Cập nhật tài liệu
 
-### Pull Request Process
-1. Create feature branch từ `develop`
-2. Implement changes với tests
-3. Submit PR với description
-4. Code review và approval
+### Quy Trình Pull Request
+1. Tạo nhánh tính năng từ `develop`
+2. Triển khai thay đổi với kiểm thử
+3. Gửi PR với mô tả
+4. Code review và phê duyệt
 5. Merge vào `develop`
 
-## 📞 Contact & Support
+## 📞 Liên Hệ & Hỗ Trợ
 
-- **Developer**: conghieeu
+- **Lập trình viên**: conghieeu
 - **Repository**: [Game_Multi_DauTien](https://github.com/conghieeu/Game_Multi_DauTien)
-- **Issues**: GitHub Issues tab
-- **Documentation**: [Game Workflow & Architecture](GAME_WORKFLOW_ARCHITECTURE.md)
+- **Báo lỗi**: Tab GitHub Issues
+- **Tài liệu**: [Quy Trình Game & Kiến Trúc](GAME_WORKFLOW_ARCHITECTURE.md)
 
-## 📄 License
+## 📄 Giấy Phép
 
 Dự án này được phát triển cho mục đích học tập và nghiên cứu.
 
-## 🔄 Version History
+## 🔄 Lịch Sử Phiên Bản
 
-- **v1.0.0**: Initial multiplayer setup
-- **v0.9.0**: Photon Fusion integration
-- **v0.8.0**: Basic networking framework
+- **v1.0.0**: Thiết lập multiplayer ban đầu
+- **v0.9.0**: Tích hợp Photon Fusion
+- **v0.8.0**: Framework mạng cơ bản
 
 ---
 
-*Last Updated: October 2025*
+*Cập nhật lần cuối: Tháng 10 năm 2025*
